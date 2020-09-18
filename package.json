@@ -11,6 +11,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "^4.17.1",
+    "jspdf": "^2.1.1",
+    "jspdf-autotable": "^3.5.13",
     "vue": "^3.0.0-0"
   },
   "devDependencies": {
@@ -28,8 +30,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
+      "plugin:vue/vue3-essential"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
