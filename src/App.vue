@@ -1,6 +1,5 @@
 <template>
-  <!--img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Mer7baa to Your Vue.js App"/-->
+  <img class="logo" alt="ATMOSTECH logo" src="./assets/logo.png">  
   <Page/>
 </template>
 
@@ -16,13 +15,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+.logo {
+  display: flex;
+  background-color: #fdfdfd;
+  width: 300px;
+  margin: auto;
+}
+
 </style>

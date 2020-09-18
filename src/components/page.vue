@@ -1,8 +1,6 @@
 <template>
   <div id="main" v-cloak>
     <div class>
-      <img class="logo" src="src/assets/logo.png" alt />
-
       <h1 class="heading">Dimmensionner votre pompe !</h1>
       <span class="services__item">
         Débit journalier requis
@@ -48,15 +46,6 @@
         Ks
         <input v-model="Ks" name value />
       </span>
-
-      <!--ul class="services">
-      <li class="services__item" v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active' : service.active }">
-        <span class="services__item">{{service.name}}
-          <input placeholder="" v-model="Dj" name="" value=""></span>
-      <li>
-
-
-      </ul-->
       <div>
         <p class="total">
           <span>Hauteur manométrique (HMT) :</span>
@@ -94,11 +83,9 @@
           <span>Pertes singulières :</span>
           <span>{{ Singular() }}</span>
         </p>
-      </div>
-      <br />
-      <br />
-      <div>
-        <p style="margin-left:26%; font-size:20px;" class>Exporter vos résultats sous format pdf</p>
+        <br/>
+        <br/>
+        <p style="font-size:20px; text-decoration: underline;" >Exporter vos résultats sous format pdf : </p>
         <br />
         <button class="button" @click="exportPdf">EXPORTER ICI</button>
       </div>
@@ -128,7 +115,7 @@ export default {
       C: "",
       ks: "",
       N: "",
-      hmt: ""
+      hmt: "",
     };
   },
   methods: {
@@ -184,7 +171,7 @@ export default {
 
       doc.text(this.H, 10, 20);
       doc.text(this.Dj, 10, 30);
-      doc.save("test number.pdf");
+      doc.save("Resultats - ATMOSTECH.pdf");
     },
     exportPdf: function() {
       var doc = new jsPDF();
@@ -222,7 +209,7 @@ export default {
           ["Pertes singulières", this.Sing]
         ]
       });
-      doc.save("test number.pdf");
+      doc.save("Resultats - ATMOSTECH.pdf");
     }
   }
 };
@@ -253,6 +240,7 @@ export default {
   text-align: top center;
   text-shadow: 0 3px 0 #295469;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 .services__item {
   display: flex;
@@ -288,6 +276,6 @@ export default {
 .logo {
   width: 250px;
   position: inherit;
-  margin-left: 30%;
+  margin: auto;
 }
 </style>
